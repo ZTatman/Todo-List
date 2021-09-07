@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Sep 07 15:15:59 EDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017b-c1b0-4112-000003693200 
+on database directory memory:/mnt/a/Desktop/spring-dev/todoApp/cf87f90e-2496-4e20-ae08-a32c57e791d4 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 
+Loaded from file:/home/zach/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=11.0.11+9-Ubuntu-0ubuntu2.18.04
+user.dir=/mnt/a/Desktop/spring-dev/todoApp
+os.name=Linux
+os.arch=amd64
+os.version=4.19.128-microsoft-standard
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
