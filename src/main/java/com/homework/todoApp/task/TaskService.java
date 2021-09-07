@@ -33,6 +33,7 @@ public class TaskService {
   public void updateTask(Long id, Task newTask) {
     Task task = taskRepository.findById(id).orElse(null);
     task.setContent(newTask.getContent());
+    task.setCompleted(newTask.getCompleted());
     taskRepository.save(task);
   }
 
