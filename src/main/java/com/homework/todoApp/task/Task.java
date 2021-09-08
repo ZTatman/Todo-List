@@ -11,7 +11,7 @@ public class Task {
   @GeneratedValue
   private Long id;
   private String content;
-  private Boolean completed = false;
+  private boolean completed = false;
   
   
   public Task() {
