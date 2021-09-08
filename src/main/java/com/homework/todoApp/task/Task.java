@@ -11,7 +11,7 @@ public class Task {
   @GeneratedValue
   private Long id;
   private String content;
-  private Boolean completed;
+  private Boolean completed = false;
   
   
   public Task() {
@@ -20,13 +20,6 @@ public class Task {
   public Task(Long id, String content) {
     this.id = id;
     this.content = content;
-    this.completed = false;
-  }
-  
-  public Task(Long id, String content, Boolean completed) {
-    this.id = id;
-    this.content = content;
-    this.completed = completed;
   }
   
   public Long getId() {

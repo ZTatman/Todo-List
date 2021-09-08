@@ -16,31 +16,31 @@ public class TaskController {
   private TaskService taskService;
   
   // GET
-  @RequestMapping("/tasks")
+  @RequestMapping("/api/tasks")
   public List<Task> getAllTasks() {
     return taskService.getAllTasks();
   }
 
   // GET BY ID
-  @RequestMapping("/tasks/{id}")
+  @RequestMapping("/api/tasks/{id}")
   public Task getTask(@PathVariable Long id)  {
     return taskService.getTask(id);
   }
 
   // POST
-  @RequestMapping(method = RequestMethod.POST, value = "/tasks")
+  @RequestMapping(method = RequestMethod.POST, value = "/api/tasks")
   public void createTask(@RequestBody Task task) {
     taskService.createTask(task);
   }
 
   // PUT
-  @RequestMapping(method = RequestMethod.PUT, value = "/tasks/{id}")
+  @RequestMapping(method = RequestMethod.PUT, value = "/api/tasks/{id}")
   public void updateTask(@PathVariable Long id, @RequestBody Task task) {
     taskService.updateTask(id, task);
   }
 
   // DELETE
-  @RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{id}")
+  @RequestMapping(method = RequestMethod.DELETE, value = "/api/tasks/{id}")
   public void deleteTask(@PathVariable Long id) {
     taskService.deleteTask(id);
   }
