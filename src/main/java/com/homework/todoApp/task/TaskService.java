@@ -1,5 +1,6 @@
 package com.homework.todoApp.task;
 
+import com.homework.todoApp.exception.NoResourceFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class TaskService {
 
   // Get one task
   public Task getTask(Long id) {
-    return taskRepository.findById(id).orElse(null);
+    return taskRepository.findById(id).orElseThrow(() -> new NoResourceFoundException("Task " + id + " does not exist."));
   }
 
   // Create a task
@@ -31,7 +32,7 @@ public class TaskService {
 
   // Update a task
   public void updateTask(Long id, Task newTask) {
-    Task task = taskRepository.findById(id).orElse(null);
+    Task task = taskRepository.findById(id).orElseThrow(() -> new NoResourceFoundException("Task " + id + " does not exist."));
     task.setContent(newTask.getContent());
     task.setCompleted(newTask.getCompleted());
     taskRepository.save(task);
@@ -39,7 +40,12 @@ public class TaskService {
 
   // Delete a task
   public void deleteTask(Long id) {
-    taskRepository.deleteById(id);
+    Task task = taskRepository.findById(id).orElseThrow(() -> new NoResourceFoundException("Task " + id + " does not exist."));
+    taskRepository.delete(task);
   }
-  
+
+//  Delete all tasks
+  public void deleteAllTasks() {
+    taskRepository.deleteAll();
+  }
 }
